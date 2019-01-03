@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-mongoose.connect('localhost:27017/shopping')
+mongoose.connect("mongodb://localhost:27017/shopping")
 
 // view engine setup
 app.engine('.hbs' , expressHbs({defaultLayout: 'layout' , extname: '.hbs'}));

@@ -6,19 +6,19 @@ mongoose.connect("mongodb://localhost:27017/shopping")
 var products  = 
 [
     new Product({
-        imagePath: "http://google.com",
-        title : "t1",
-        description : "d1",
+        imagePath: "../public/images/h1.jpg",
+        title : "harry potter",
+        description : "description 1",
         price : 10
     }),
     new Product({
-        imagePath: "http://google.com",
+        imagePath: "../public/images/h2.jpg",
         title : "t2",
         description : "d2",
         price : 20
     }),
     new Product({
-        imagePath: "http://google.com",
+        imagePath: "../public/images/h3.jpg",
         title : "t3",
         description : "d3",
         price : 30
