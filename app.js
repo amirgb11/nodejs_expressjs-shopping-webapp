@@ -14,7 +14,7 @@ var validator = require('express-validator');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/user');
 
 var app = express();
 
@@ -45,8 +45,16 @@ app.use(flash());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// set local login variable for using in the view 
+app.use((req , res , next) => {
+  res.locals.login = req.isAuthenticated();
+  next();
+})
+
+app.use('/user', usersRouter);
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -63,5 +71,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
