@@ -21,4 +21,9 @@ router.get('/', function(req, res, next) {
   })
 });
 
+
+router.get('/add-to-cart/:id' , (req , res) => {
+  var product
+})
+
 module.exports = router;
