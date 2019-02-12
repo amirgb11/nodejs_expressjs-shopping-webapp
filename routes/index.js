@@ -4,6 +4,7 @@ var passport = require('passport')
 var Product = require('../models/product');
 var csrf = require('csurf');   // package for csrf protection
 var csrfProtection = csrf();
+var Cart = require('../models/cart');
 
 router.use(csrfProtection);
 
@@ -23,7 +24,18 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/add-to-cart/:id' , (req , res) => {
-  var product
+  var productId = req.params.id;
+  var cart = new Cart( req.session.cart ? req.session.cart : {});
+
+  Product.findById(productId , (err , product) => {
+      if (err) {
+        return  res.redirect('/');
+      }
+
+      cart.add(product , product.id);
+      req.session.cart = cart;
+      res.redirect('/');
+  })
 })
 
 module.exports = router;
