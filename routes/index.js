@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/add-to-cart/:id' , (req , res) => {
   var productId = req.params.id;
-  var cart = new Cart( req.session.cart ? req.session.cart : {});
+  var cart = new Cart( req.session.cart ? req.session.cart : {items : {}});
 
   Product.findById(productId , (err , product) => {
       if (err) {
@@ -34,6 +34,7 @@ router.get('/add-to-cart/:id' , (req , res) => {
 
       cart.add(product , product.id);
       req.session.cart = cart;
+      console.log(req.session.cart);
       res.redirect('/');
   })
 })
