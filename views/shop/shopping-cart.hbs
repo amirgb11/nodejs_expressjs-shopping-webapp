@@ -1,4 +1,119 @@
+{{# if products }}
+    <div class='row' style='padding-top:25px; padding-bottom:25px;'>
+        <div class='col-md-12'>
+            <div id='mainContentWrapper'>
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 style="text-align: center;">
+                        Review Your Order & Complete Checkout
+                    </h2>
+                    <hr/>
+                    <a href="/" class="btn btn-info" style="width: 100%;">Add More Products & Services</a>
+                    <hr/>
 
+
+                    <div class="shopping_cart">
+                        <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        
+                                    </div>
+    {{!-- <ul class="list-group"> --}}
+        {{# each products }}
+                      {{!-- <li class="list-item"> --}}
+                                    <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <div class="items">
+                                                <div class="col-md-9">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <td>
+                                                              <strong> {{ this.item.title }}</strong>
+                                                            </td>
+                                                            </td>
+                                                            <td colspan="2" class="pull-right" style="margin-right: 0px">
+                                                                <b><span class="label label-success">${{ this.price }}</span></b>
+                                                                <div class="col-md-4"></div>
+                                                            </td>
+   <td>                                                         
+      <div class="btn-group">
+          <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown" >Action <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Reduce by 1</a></li>
+            <li><a href="#">Remove All</a></li>
+          </ul>
+        </div>
+    </td>
+    
+                                                            <td colspan="2">
+                                                                <a class="btn btn-warning btn-sm pull-right"
+                                                                   href="#"
+                                                                   ><span class="badge">{{ this.qty }}</span></a>
+                                                      
+
+                                                            
+
+                                                        </tr>
+                                                        
+                                                    </table>
+                                                </div>
+
+                                                
+                                                <div class="col-md-3" hidden>
+                                                    <div style="text-align: center;">
+                                                        <h3>Order Total</h3>
+                                                        <h3><span style="color:green;">${{ totalPrice }}</span></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    {{!-- </li> --}}
+         {{/ each}}  
+         {{!-- </ul> --}}
+                            <div style="text-align: center;">
+                                      
+                                              <h3><span>Order Total : ${{ totalPrice }}</span></h3>
+                            </div>
+                                                
+
+<table class="table table-striped">
+     <tr> 
+        <td> 
+      <button type="button" class="btn btn-success pull-left" style="margin-left: 4%">CheckOut</button>
+    </td>
+       </tr> 
+       </table>                                            
+
+                                </div>
+
+                            </div>
+                    </div>
+
+                </div>
+                </form>
+            </div>
+  </div>
+
+
+    
+{{ else }}
+
+<div class="row">    
+  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+    <h2>No Items In Cart</h2>
+  </div>
+</div>
+
+{{/ if}}
+
+
+
+
+
+
+
+{{!-- 
 {{# if products }}
 <div class="row">    
   <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
@@ -39,7 +154,9 @@
       <button type="button" class="btn btn-success">CheckOut</button>
   </div>
 </div>
+
 {{ else }}
+
 <div class="row">    
   <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
     <h2>No Items In Cart</h2>
@@ -52,4 +169,8 @@
 
   
 
-  
+   --}}
+
+
+
+

@@ -1,12 +1,12 @@
 
-{{#each products  }}
+{{# each products }}
    
 <div class="row">
 
-  {{#each this}}
+  {{# each this}}
     
   <div class="col-sm-6 col-md-4">
-    <div class="thumbnail" >
+    <div class="thumbnail">
       <img src="{{ this.imagePath }}" alt="..." class="img-responsive">
       <div class="caption">
         <h3>{{ this.title }}</h3>
@@ -22,7 +22,7 @@
   </div>
 
 
-  {{/each}}
+  {{/ each}}
   
     
 </div>
